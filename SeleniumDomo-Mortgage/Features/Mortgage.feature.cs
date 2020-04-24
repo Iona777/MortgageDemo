@@ -92,7 +92,7 @@ namespace SeleniumDomo_Mortgage.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void GetAMortgage(string mortgageReason, string location, string numberOfApplicants, string annualIncome, string numberOfDependants, string annualBonus, string monthlyDebt, string offerAmount, string[] exampleTags)
+        public virtual void GetAFirstTimeBuyerMortgage(string mortgageReason, string location, string numberOfApplicants, string annualIncome, string numberOfDependants, string annualBonus, string monthlyDebt, string offerAmount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -101,7 +101,7 @@ namespace SeleniumDomo_Mortgage.Features
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get a mortgage", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get a First Time Buyer mortgage", null, @__tags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -132,27 +132,53 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("I enter \"{0}\", \"{1}\", \"{2}\",\"{3}\", \"{4}\" and \"{5}\" in the how much can I borrow t" +
                             "ab", location, numberOfApplicants, numberOfDependants, annualIncome, annualBonus, monthlyDebt), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 11
+ testRunner.And("I click on calculate how much I can borrow button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+ testRunner.Then(string.Format("the offer amount should be \"{0}\"", offerAmount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get a mortgage: First time buyers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get a First Time Buyer mortgage: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Mortgage")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "First time buyers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mortgage Reason", "First time buyers")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Location", "England")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Location", "Scotland")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Number of Applicants", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Annual Income", "30000")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Number of Dependants", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Number of Dependants", "2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Annual Bonus", "2000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Monthly Debt", "500")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "108,255")]
-        public virtual void GetAMortgage_FirstTimeBuyers()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "80,940")]
+        public virtual void GetAFirstTimeBuyerMortgage_Variant0()
         {
 #line 7
-this.GetAMortgage("First time buyers", "England", "1", "30000", "0", "2000", "500", "108,255", ((string[])(null)));
+this.GetAFirstTimeBuyerMortgage("First time buyers", "Scotland", "1", "30000", "2", "2000", "500", "80,940", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get a First Time Buyer mortgage: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Mortgage")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mortgage Reason", "First time buyers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Location", "Wales")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Number of Applicants", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Annual Income", "40000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Number of Dependants", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Annual Bonus", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Monthly Debt", "200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "165,970")]
+        public virtual void GetAFirstTimeBuyerMortgage_Variant1()
+        {
+#line 7
+this.GetAFirstTimeBuyerMortgage("First time buyers", "Wales", "1", "40000", "3", "0", "200", "165,970", ((string[])(null)));
 #line hidden
         }
     }

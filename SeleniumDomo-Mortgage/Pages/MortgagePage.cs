@@ -20,9 +20,10 @@ namespace SeleniumDomo_Mortgage.Pages
         private readonly By locationDropdownLocator = By.Id("applicants_address");
         private readonly By numberOfApplicantsDropdownLocator = By.Id("applicants_number");
         private readonly By numberOfDependantsDropdownLocator = By.Id("dependants");
-        private readonly By annualIncomeDropdownLocator = By.Id("income1");
-        private readonly By annualBonusDropdownLocator = By.Id("bonus1");
-        private readonly By monthlyDebtDropdownLocator = By.Id("monthly_outgoings1");
+
+        private readonly By annualIncomeFieldLocator = By.Id("income1");
+        private readonly By annualBonusFieldLocator = By.Id("bonus1");
+        private readonly By monthlyDebtFieldLocator = By.Id("monthly_outgoings1");
         private readonly By calculateButtonLocator = By.Id("lnkButHowMuch");
 
 
@@ -38,25 +39,30 @@ namespace SeleniumDomo_Mortgage.Pages
             GetElementByVisibleText(reasonText).Click();
         }
 
-
-        //Cannot find elements. I think I need to switch frame first
+                
         public void EnterHowMuchICanBorrowDetails(string location, string applicants, string dependants, string income, string bonus, string debt)
         {
-            var locationDropdown = GetClickableElementByLocator(locationDropdownLocator);
-            var applicantsDropdown = GetClickableElementByLocator(numberOfApplicantsDropdownLocator);
-            var dependantsDropdown = GetClickableElementByLocator(numberOfDependantsDropdownLocator);
-            var incomeDropdown = GetClickableElementByLocator(annualIncomeDropdownLocator);
-            var bonusDropdown = GetClickableElementByLocator(annualBonusDropdownLocator);
-            var debtDropdown = GetClickableElementByLocator(monthlyDebtDropdownLocator);
-
+            var locationDropdown = GetElementByLocator(locationDropdownLocator);
+            var applicantsDropdown = GetElementByLocator(numberOfApplicantsDropdownLocator);
+            var dependantsDropdown = GetElementByLocator(numberOfDependantsDropdownLocator);
+            
             SelectDropDownOptionByValue(locationDropdown, location);
             SelectDropDownOptionByValue(applicantsDropdown, applicants);
             SelectDropDownOptionByValue(dependantsDropdown, dependants);
-            SelectDropDownOptionByValue(incomeDropdown, income);
-            SelectDropDownOptionByValue(bonusDropdown, bonus);
-            SelectDropDownOptionByValue(debtDropdown, debt);
+
+            EnterText(annualIncomeFieldLocator, income);
+            EnterText(annualBonusFieldLocator, bonus);
+            EnterText(monthlyDebtFieldLocator, debt);
+
+            Driver.Pause(2000);
 
         }
+
+        public void ClickCalculateButton()
+        {
+            ClickOnElement(calculateButtonLocator);
+        }
+
     }     
 }
 

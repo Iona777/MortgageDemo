@@ -10,15 +10,15 @@ namespace SeleniumDomo_Mortgage.Steps.Shared
     [Binding]
     public class WebHooks
     {
-        public static RunSettings _runSettings = new RunSettings();
+        //public static RunSettings _runSettings = new RunSettings();
 
         [BeforeFeature()]
         public static void StartBrowser()
         {
             //Less simple versions that do not work
             //Runsettigns version
-            Driver.BaseUrl = _runSettings.WebRoot;
-            Driver.OpenBrowser(_runSettings.Browser);
+            //Driver.BaseUrl = _runSettings.WebRoot;
+            //Driver.OpenBrowser(_runSettings.Browser);
 
             //Here are errors when running: 
             //[MSTest][Discovery][C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.dll] UTA001: TestClass attribute defined on non-public class SeleniumDomo_Mortgage_MSTestAssemblyHooks
@@ -34,8 +34,9 @@ namespace SeleniumDomo_Mortgage.Steps.Shared
 
 
             //App.config version
-            //Driver.BaseUrl = Driver.GetBaseUrl();
-            //Driver.OpenBrowser(Driver.GetBrowser());
+            Driver.BaseUrl = Driver.GetBaseUrl();
+            Driver.DefaultTimeout = Driver.GetTimeouSeconds();
+            Driver.OpenBrowser(Driver.GetBrowser());
 
             //Using App.config I get this error
             //Class Initialization method SeleniumDomo_Mortgage.Features.MortgageFeature.FeatureSetup threw exception.System.NullReferenceException: System.NullReferenceException: Object reference not set to an instance of an object..Stack Trace:
@@ -44,9 +45,9 @@ namespace SeleniumDomo_Mortgage.Steps.Shared
 
 
             //Simple version that works
-            //Driver.BaseUrl = "https://www2.tsb.co.uk/mortgages/";
-            //Driver.DefaultTimeout = 10;
-            //Driver.OpenBrowser("chrome");
+        //    Driver.BaseUrl = "https://www2.tsb.co.uk/mortgages/";
+         //   Driver.DefaultTimeout = 10;
+          //  Driver.OpenBrowser("chrome");
 
 
         }

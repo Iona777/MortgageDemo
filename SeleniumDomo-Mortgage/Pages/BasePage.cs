@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumDomo_Mortgage.Utilities; //Location of Driver class
@@ -44,6 +42,25 @@ namespace SeleniumDomo_Mortgage.Pages
             }
         }
 
+
+        /// <summary>
+        /// Waits for, then retuns, a clickable element 
+        /// </summary>
+        /// <param name="elementLocator">Used to locate the element, e.g. By.Id("xyz")</param>
+        /// <param name="waitSeconds">Timeout for wait. Defaults to BaseTimeout which is ultimately set by App.config </param>
+        /// <returns></returns>
+        public IWebElement GetElementByLocator(By elementLocator, int? waitSeconds = null)
+        {
+
+            int seconds = waitSeconds ?? BaseTimeout;
+            WebDriverWait wait = new WebDriverWait(BaseDriver, TimeSpan.FromSeconds(seconds));
+
+            return wait.Until(ExpectedConditions.ElementExists(elementLocator));
+        }
+
+
+
+
         /// <summary>
         /// Waits for, then retuns, a clickable element 
         /// </summary>
@@ -57,6 +74,23 @@ namespace SeleniumDomo_Mortgage.Pages
             WebDriverWait wait = new WebDriverWait(BaseDriver, TimeSpan.FromSeconds(seconds));
 
             return wait.Until(ExpectedConditions.ElementToBeClickable(elementLocator));
+        }
+
+
+
+        /// <summary>
+        /// Waits for, then retuns, a visible element 
+        /// </summary>
+        /// <param name="elementLocator">Used to locate the element, e.g. By.Id("xyz")</param>
+        /// <param name="waitSeconds">Timeout for wait. Defaults to BaseTimeout which is ultimately set by App.config </param>
+        /// <returns></returns>
+        public IWebElement GetVisibleElementByLocator(By elementLocator, int? waitSeconds = null)
+        {
+
+            int seconds = waitSeconds ?? BaseTimeout;
+            WebDriverWait wait = new WebDriverWait(BaseDriver, TimeSpan.FromSeconds(seconds));
+
+            return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator)); ;
         }
 
 
@@ -127,5 +161,7 @@ namespace SeleniumDomo_Mortgage.Pages
                 return false;
             }
         }
+
+        
     }
 }

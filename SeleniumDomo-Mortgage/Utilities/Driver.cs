@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
 
+
+
 namespace SeleniumDomo_Mortgage.Utilities
 {
     public static class Driver
@@ -19,6 +21,7 @@ namespace SeleniumDomo_Mortgage.Utilities
         //These values come from .runsettings file, set via WebHooks 
         public static string BaseUrl;
         public static int DefaultTimeout;
+
 
         public static void OpenBrowser(string selectedBrowser)
         {
@@ -58,7 +61,10 @@ namespace SeleniumDomo_Mortgage.Utilities
 
         public static string GetValueFromConfigKey(string key)
         {
-            return ConfigurationManager.AppSettings.Get(key);
+            var settings = ConfigHelper.GetConfig();
+            return settings[key];
+
+            //return ConfigurationManager.AppSettings.Get(key);
             //Also tried this, neither work, get nulls. According to internet my App.config file must be in wrong place
             //but as far as I can see it is correct
             //return ConfigurationManager.AppSettings[key];
@@ -85,6 +91,14 @@ namespace SeleniumDomo_Mortgage.Utilities
         public static void Shutdown()
         {
             TheDriver.Quit();
+        }
+
+        /// <summary>
+        /// Switches focus to the last frame
+        /// </summary>
+        public static void SwitchWindowFirstFrame()
+        {
+            TheDriver.SwitchTo().Frame(0);
         }
     }
 }
