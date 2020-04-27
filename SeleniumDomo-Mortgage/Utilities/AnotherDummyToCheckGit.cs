@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SeleniumDomo_Mortgage.Utilities
 {
-    class DummyToCheckGit
+    class AnotherDummyToCheckGit
     {
     }
 }
