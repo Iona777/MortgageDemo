@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gregm\\source\\repos\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage.csproj": {}
+    "C:\\repos\\external\\MortgageDemo\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gregm\\source\\repos\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage.csproj": {
+    "C:\\repos\\external\\MortgageDemo\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gregm\\source\\repos\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage.csproj",
+        "projectUniqueName": "C:\\repos\\external\\MortgageDemo\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage.csproj",
         "projectName": "SeleniumDomo-Mortgage",
-        "projectPath": "C:\\Users\\gregm\\source\\repos\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage.csproj",
-        "packagesPath": "C:\\Users\\gregm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gregm\\source\\repos\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage\\obj\\",
+        "projectPath": "C:\\repos\\external\\MortgageDemo\\SeleniumDomo-Mortgage\\SeleniumDomo-Mortgage.csproj",
+        "packagesPath": "C:\\Users\\apostolidist\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\external\\MortgageDemo\\SeleniumDomo-Mortgage\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\gregm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\apostolidist\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +25,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/bcagroup/Oxford/_packaging/cinch-labs/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -113,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
