@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using SeleniumDomo_Mortgage.Utilities; //Location of Driver class
+﻿using SeleniumDomo_Mortgage.Utilities; //Location of Driver class
 using TechTalk.SpecFlow;
 
 namespace SeleniumDomo_Mortgage.Steps.Shared

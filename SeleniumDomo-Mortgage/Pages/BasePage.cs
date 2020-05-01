@@ -19,15 +19,6 @@ namespace SeleniumDomo_Mortgage.Pages
         }
 
         //Methods
-        /// <summary>
-        /// Returns the URL of the currently displayed page
-        /// </summary>
-        /// <returns></returns>
-        public string PageUrl()
-        {
-            return Driver.TheDriver.Url;
-        }
-
         public void CheckPageTitle(string expectedTitle)
         {
             WebDriverWait wait = new WebDriverWait(BaseDriver, TimeSpan.FromSeconds(5));
@@ -139,29 +130,5 @@ namespace SeleniumDomo_Mortgage.Pages
             select.SelectByValue(value);
         }
 
-
-        /// <summary>
-        /// Checks if an element is visible on the page. Visibility means that the element is not only displayed, but also has height and width greater than zero
-        /// </summary>
-        /// <param name="elementLocator">Used to locate the element, e.g. By.Id("xyz")</param>
-        /// <returns></returns>
-        public bool IsElementVisible(By elementLocator, int? waitSeconds = null)
-        {
-            int seconds = waitSeconds ?? BaseTimeout;
-            WebDriverWait wait = new WebDriverWait(BaseDriver, TimeSpan.FromSeconds(seconds));
-
-            try
-            {
-                return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator)).Displayed;
-            }
-            catch (Exception e)
-            {
-
-                //Element is not present.
-                return false;
-            }
-        }
-
-        
     }
 }

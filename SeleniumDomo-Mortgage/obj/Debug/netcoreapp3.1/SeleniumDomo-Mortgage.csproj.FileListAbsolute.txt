@@ -2,9 +2,7 @@ C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debu
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\App.config
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\appSettings.json
-C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.dll.config
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.deps.json
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.runtimeconfig.json
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\bin\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.runtimeconfig.dev.json

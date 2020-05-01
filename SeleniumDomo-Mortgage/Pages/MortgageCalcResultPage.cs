@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace SeleniumDomo_Mortgage.Pages
 {
@@ -9,7 +6,7 @@ namespace SeleniumDomo_Mortgage.Pages
     {
         //Constructor - not requuired, inherited from BasePage
 
-        //WebElements
+        //WebElement Locators
         private readonly By offerAmountLocator = By.ClassName("borrow-result");
 
 

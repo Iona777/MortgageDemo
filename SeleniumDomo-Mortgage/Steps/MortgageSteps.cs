@@ -1,22 +1,26 @@
 ﻿using SeleniumDomo_Mortgage.Utilities; //Location of Driver class
 using SeleniumDomo_Mortgage.Pages; //Location of page objects
 using Microsoft.VisualStudio.TestTools.UnitTesting; //Need this for the Asserts
-using TechTalk.SpecFlow;
+using TechTalk.SpecFlow; //Need this for the BDD
 
 namespace SeleniumDomo_Mortgage.Steps
 {
     [Binding]
     public sealed class MortgageSteps
     {
+        //Declare your page objects
         private readonly MortgagePage _theMortgagePage;
         private readonly MortgageCalcResultPage _theMortgageCaclResultPage;
+        private readonly FindMortgageCalcResultPage _theFindMortgageCalcResultsPage;
         private readonly string MortgageTitle = "Mortgages | Our best deals & rates | TSB Bank";
         
         //Constructor
         public MortgageSteps()
         {
+            //Instantiate your page objects
             _theMortgagePage = new MortgagePage();
             _theMortgageCaclResultPage = new MortgageCalcResultPage();
+            _theFindMortgageCalcResultsPage = new FindMortgageCalcResultPage();
         }
 
         [Given(@"I have navigated to the mortgage page")]
@@ -24,6 +28,7 @@ namespace SeleniumDomo_Mortgage.Steps
         {
             _theMortgagePage.GotToMortgagePage();
             _theMortgagePage.CheckPageTitle(MortgageTitle);
+            //This is just here so user can see what is happening in this demo, otherwise it is too fast too see. 
             Driver.Pause(2000);   
         }
 
@@ -42,8 +47,9 @@ namespace SeleniumDomo_Mortgage.Steps
         [When(@"I click on calculate how much I can borrow button")]
         public void WhenIClickOnCalculateHowMuchICanBorrowButton()
         {
-            _theMortgagePage.ClickCalculateButton();
-            Driver.Pause(2000); //So uiser can see what is happening
+            _theMortgagePage.ClickCalculateHowMuchButton();
+            //This is just here so user can see what is happening in this demo, otherwise it is too fast too see. 
+            Driver.Pause(2000); 
         }
 
         [Then(@"the offer amount should be ""(.*)""")]
@@ -51,6 +57,34 @@ namespace SeleniumDomo_Mortgage.Steps
         {
             var actualAmount = _theMortgageCaclResultPage.getOfferAmount();
             Assert.AreEqual(expectedAmount, actualAmount);
+        }
+
+        [When(@"I click on the Find a Mortgage tab")]
+        public void WhenIClickOnTheFindAMortgageTab()
+        {
+            _theMortgagePage.ClickOnFindMortgageTab();
+
+        }
+
+        [When(@"I enter ""(.*)"", ""(.*)"",""(.*)"", and ""(.*)"" in the find a mortgage tab")]
+        public void WhenIEnterAndInTheFindAMortgageTab(string customerType, string deposit, string propertyValue, string term)
+        {
+            _theMortgagePage.EnterFindAMortgageDetails(customerType, deposit, propertyValue, term);
+        }
+
+        [When(@"I click on the calculate find a mortgage button")]
+        public void WhenIClickOnTheCalculateFindAMortgageButton()
+        {
+            _theMortgagePage.ClickCalculateFindButton();
+            //This is just here so user can see what is happening in this demo, otherwise it is too fast too see. 
+            Driver.Pause(2000);
+        }
+
+        [Then(@"The number of products is greated than zer")]
+        public void ThenTheNumberOfProductsIsGreatedThanZer()
+        {
+            Assert.IsTrue(_theFindMortgageCalcResultsPage.GetNumberOfProducts() > 0, "Expected number of products to be greater than zero");
+            
         }
 
     }

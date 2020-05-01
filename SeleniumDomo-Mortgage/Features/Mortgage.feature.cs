@@ -48,8 +48,8 @@ namespace SeleniumDomo_Mortgage.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Mortgage", "\tIn order to get a mortage\r\n\tAs a member of public\r\n\tI want to be told how much I" +
-                    " can borrow", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Mortgage", "\tIn order to get a mortage\r\n\tAs a member of public\r\n\tI want to see what is availa" +
+                    "ble", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -92,7 +92,7 @@ namespace SeleniumDomo_Mortgage.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void GetAFirstTimeBuyerMortgage(string mortgageReason, string location, string numberOfApplicants, string annualIncome, string numberOfDependants, string annualBonus, string monthlyDebt, string offerAmount, string[] exampleTags)
+        public virtual void HowMuchCanFirstTimeBuyerBorrow(string mortgageReason, string location, string numberOfApplicants, string annualIncome, string numberOfDependants, string annualBonus, string monthlyDebt, string offerAmount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -101,7 +101,7 @@ namespace SeleniumDomo_Mortgage.Features
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get a First Time Buyer mortgage", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("How much can First Time Buyer borrow", null, @__tags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -143,7 +143,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get a First Time Buyer mortgage: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("How much can First Time Buyer borrow: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Mortgage")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
@@ -155,15 +155,15 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Annual Bonus", "2000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Monthly Debt", "500")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "80,940")]
-        public virtual void GetAFirstTimeBuyerMortgage_Variant0()
+        public virtual void HowMuchCanFirstTimeBuyerBorrow_Variant0()
         {
 #line 7
-this.GetAFirstTimeBuyerMortgage("First time buyers", "Scotland", "1", "30000", "2", "2000", "500", "80,940", ((string[])(null)));
+this.HowMuchCanFirstTimeBuyerBorrow("First time buyers", "Scotland", "1", "30000", "2", "2000", "500", "80,940", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get a First Time Buyer mortgage: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("How much can First Time Buyer borrow: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Mortgage")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
@@ -175,10 +175,96 @@ this.GetAFirstTimeBuyerMortgage("First time buyers", "Scotland", "1", "30000", "
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Annual Bonus", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Monthly Debt", "200")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "165,970")]
-        public virtual void GetAFirstTimeBuyerMortgage_Variant1()
+        public virtual void HowMuchCanFirstTimeBuyerBorrow_Variant1()
         {
 #line 7
-this.GetAFirstTimeBuyerMortgage("First time buyers", "Wales", "1", "40000", "3", "0", "200", "165,970", ((string[])(null)));
+this.HowMuchCanFirstTimeBuyerBorrow("First time buyers", "Wales", "1", "40000", "3", "0", "200", "165,970", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures(string mortgageReason, string customerType, string amountOfDeposit, string propertyValue, string repaymentTerm, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "mytag"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Are there any mortgages for first time buyer with these figures", null, @__tags);
+#line 20
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 21
+ testRunner.Given("I have navigated to the mortgage page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 22
+ testRunner.When(string.Format("I select a mortgage reason of  \"{0}\"", mortgageReason), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 23
+ testRunner.And("I click on the Find a Mortgage tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 24
+ testRunner.And(string.Format("I enter \"{0}\", \"{1}\",\"{2}\", and \"{3}\" in the find a mortgage tab", customerType, amountOfDeposit, propertyValue, repaymentTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 25
+ testRunner.And("I click on the calculate find a mortgage button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
+ testRunner.Then("The number of products is greated than zer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Are there any mortgages for first time buyer with these figures: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Mortgage")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mortgage Reason", "First time buyers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Customer Type", "first-time-buyer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount of Deposit", "25000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Property Value", "100000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Repayment Term", "20")]
+        public virtual void AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures_Variant0()
+        {
+#line 20
+this.AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures("First time buyers", "first-time-buyer", "25000", "100000", "20", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Are there any mortgages for first time buyer with these figures: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Mortgage")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mortgage Reason", "First time buyers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Customer Type", "first-time-buyer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount of Deposit", "50000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Property Value", "200000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Repayment Term", "15")]
+        public virtual void AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures_Variant1()
+        {
+#line 20
+this.AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures("First time buyers", "first-time-buyer", "50000", "200000", "15", ((string[])(null)));
 #line hidden
         }
     }

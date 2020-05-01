@@ -1,15 +1,7 @@
-﻿using System;
-using System.Diagnostics;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
-using OpenQA.Selenium.Support.UI;
 using System.Threading;
-
-using System.Collections.Generic;
-using System.Text;
-using System.Configuration;
-
 
 
 namespace SeleniumDomo_Mortgage.Utilities
@@ -18,7 +10,7 @@ namespace SeleniumDomo_Mortgage.Utilities
     {
         public static IWebDriver TheDriver;
         
-        //These values come from .runsettings file, set via WebHooks 
+        //These values come from config file, set via WebHooks 
         public static string BaseUrl;
         public static int DefaultTimeout;
 
@@ -38,19 +30,17 @@ namespace SeleniumDomo_Mortgage.Utilities
                 default:
                 break;
             }
-
-        
         }
 
 
-        public static void NavigateTo(string targetURL) //Maybe make this a URL type?
+        public static void NavigateTo(string targetURL) 
         {
             TheDriver.Navigate().GoToUrl(targetURL);
         }
 
 
         /// <summary>
-        /// Waits for specified  number of milliseconds. USed for debugging only
+        /// Waits for specified  number of milliseconds. Used for debugging only
         /// </summary>
         /// <param name="time"></param>
         public static void Pause(int time)
@@ -63,11 +53,6 @@ namespace SeleniumDomo_Mortgage.Utilities
         {
             var settings = ConfigHelper.GetConfig();
             return settings[key];
-
-            //return ConfigurationManager.AppSettings.Get(key);
-            //Also tried this, neither work, get nulls. According to internet my App.config file must be in wrong place
-            //but as far as I can see it is correct
-            //return ConfigurationManager.AppSettings[key];
         }
 
         public static int GetTimeouSeconds()
@@ -78,7 +63,6 @@ namespace SeleniumDomo_Mortgage.Utilities
 
         public static string GetBrowser()
         {
-            //I know I could do this one line. Using 2 just so I can see what is returned more easily
             var browser = GetValueFromConfigKey("Browser");
             return browser;
         }
@@ -91,14 +75,6 @@ namespace SeleniumDomo_Mortgage.Utilities
         public static void Shutdown()
         {
             TheDriver.Quit();
-        }
-
-        /// <summary>
-        /// Switches focus to the last frame
-        /// </summary>
-        public static void SwitchWindowFirstFrame()
-        {
-            TheDriver.SwitchTo().Frame(0);
         }
     }
 }
