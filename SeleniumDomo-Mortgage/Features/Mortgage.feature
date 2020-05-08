@@ -23,7 +23,7 @@ Scenario Outline: Are there any mortgages for first time buyer with these figure
 	And I click on the Find a Mortgage tab
 	And I enter "<Customer Type>", "<Amount of Deposit>","<Property Value>", and "<Repayment Term>" in the find a mortgage tab
 	And I click on the calculate find a mortgage button
-	Then The number of products is greated than zer
+	Then The number of products is greated than zero
 Examples: 
 | Mortgage Reason   | Customer Type    | Amount of Deposit	| Property Value | Repayment Term	|
 | First time buyers | first-time-buyer | 25000				| 100000         | 20				|

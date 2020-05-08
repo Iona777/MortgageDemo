@@ -228,7 +228,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click on the calculate find a mortgage button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
- testRunner.Then("The number of products is greated than zer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The number of products is greated than zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

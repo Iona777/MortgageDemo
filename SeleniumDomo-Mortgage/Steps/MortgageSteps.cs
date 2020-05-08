@@ -80,7 +80,7 @@ namespace SeleniumDomo_Mortgage.Steps
             Driver.Pause(2000);
         }
 
-        [Then(@"The number of products is greated than zer")]
+        [Then(@"The number of products is greated than zero")]
         public void ThenTheNumberOfProductsIsGreatedThanZer()
         {
             Assert.IsTrue(_theFindMortgageCalcResultsPage.GetNumberOfProducts() > 0, "Expected number of products to be greater than zero");
