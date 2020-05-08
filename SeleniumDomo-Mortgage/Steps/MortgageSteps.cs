@@ -10,7 +10,7 @@ namespace SeleniumDomo_Mortgage.Steps
     {
         //Declare your page objects
         private readonly MortgagePage _theMortgagePage;
-        private readonly MortgageCalcResultPage _theMortgageCaclResultPage;
+        private readonly MortgageCalcResultPage _theMortgageCalcResultPage;
         private readonly FindMortgageCalcResultPage _theFindMortgageCalcResultsPage;
         private readonly string MortgageTitle = "Mortgages | Our best deals & rates | TSB Bank";
         
@@ -19,7 +19,7 @@ namespace SeleniumDomo_Mortgage.Steps
         {
             //Instantiate your page objects
             _theMortgagePage = new MortgagePage();
-            _theMortgageCaclResultPage = new MortgageCalcResultPage();
+            _theMortgageCalcResultPage = new MortgageCalcResultPage();
             _theFindMortgageCalcResultsPage = new FindMortgageCalcResultPage();
         }
 
@@ -55,8 +55,9 @@ namespace SeleniumDomo_Mortgage.Steps
         [Then(@"the offer amount should be ""(.*)""")]
         public void ThenTheOfferAmountShouldBe(string expectedAmount)
         {
-            var actualAmount = _theMortgageCaclResultPage.getOfferAmount();
-            Assert.AreEqual(expectedAmount, actualAmount);
+            Assert.IsTrue(_theMortgageCalcResultPage.CheckOfferAmount(expectedAmount),"Check Offer returned false");
+            //This is just here so user can see what is happening in this demo, otherwise it is too fast too see. 
+            Driver.Pause(2000);
         }
 
         [When(@"I click on the Find a Mortgage tab")]
@@ -80,7 +81,7 @@ namespace SeleniumDomo_Mortgage.Steps
             Driver.Pause(2000);
         }
 
-        [Then(@"The number of products is greated than zero")]
+        [Then(@"The number of products is greater than zero")]
         public void ThenTheNumberOfProductsIsGreatedThanZer()
         {
             Assert.IsTrue(_theFindMortgageCalcResultsPage.GetNumberOfProducts() > 0, "Expected number of products to be greater than zero");

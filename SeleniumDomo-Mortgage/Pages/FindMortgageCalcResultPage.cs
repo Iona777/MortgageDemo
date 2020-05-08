@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumDomo_Mortgage.Utilities;
 
 namespace SeleniumDomo_Mortgage.Pages
 {
@@ -12,10 +13,26 @@ namespace SeleniumDomo_Mortgage.Pages
         //Methods
         public int GetNumberOfProducts()
         {
-            string noOfproductsText = GetVisibleElementByLocator(numberOfProductsLocator).Text;
-            int noOfProducts;
-            int.TryParse(noOfproductsText, out noOfProducts);
+            int noOfProducts = getProducts();
+
+            //Sometimes it will display briefly as zero before filling in the required amount
+            for (int index = 0; index < 10; index++)
+            {
+                if (noOfProducts == 0)
+                {
+                    Driver.Pause(1000);
+                    noOfProducts = getProducts();
+                }
+            }
+
             return noOfProducts;
         }
+
+        private int getProducts()
+        {
+            string noProductsText = GetVisibleElementByLocator(numberOfProductsLocator).Text;
+            return int.Parse(noProductsText);
+        }
+
     }
 }

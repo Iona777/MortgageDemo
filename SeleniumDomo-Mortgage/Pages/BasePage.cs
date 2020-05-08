@@ -42,14 +42,11 @@ namespace SeleniumDomo_Mortgage.Pages
         /// <returns></returns>
         public IWebElement GetElementByLocator(By elementLocator, int? waitSeconds = null)
         {
-
             int seconds = waitSeconds ?? BaseTimeout;
             WebDriverWait wait = new WebDriverWait(BaseDriver, TimeSpan.FromSeconds(seconds));
 
             return wait.Until(ExpectedConditions.ElementExists(elementLocator));
         }
-
-
 
 
         /// <summary>
@@ -60,7 +57,6 @@ namespace SeleniumDomo_Mortgage.Pages
         /// <returns></returns>
         public IWebElement GetClickableElementByLocator(By elementLocator, int? waitSeconds = null)
         {
-
             int seconds = waitSeconds ?? BaseTimeout;
             WebDriverWait wait = new WebDriverWait(BaseDriver, TimeSpan.FromSeconds(seconds));
 
@@ -77,7 +73,6 @@ namespace SeleniumDomo_Mortgage.Pages
         /// <returns></returns>
         public IWebElement GetVisibleElementByLocator(By elementLocator, int? waitSeconds = null)
         {
-
             int seconds = waitSeconds ?? BaseTimeout;
             WebDriverWait wait = new WebDriverWait(BaseDriver, TimeSpan.FromSeconds(seconds));
 
@@ -129,6 +124,5 @@ namespace SeleniumDomo_Mortgage.Pages
             SelectElement select = new SelectElement(dropDown);
             select.SelectByValue(value);
         }
-
     }
 }
