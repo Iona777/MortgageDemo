@@ -11,9 +11,9 @@ Scenario Outline: How much can First Time Buyer borrow
 	And I click on calculate how much I can borrow button
 	Then the offer amount should be "<Offer amount>"
 Examples: 
-| Mortgage Reason   | Location | Number of Applicants | Annual Income | Number of Dependants	| Annual Bonus	| Monthly Debt	| Offer amount	|
-| First time buyers | Scotland  | 1                    | 30000         | 2						|		2000    | 500			|  80,940		|
-| First time buyers | Wales		| 1                    | 40000         | 3						|		0       | 200			|  165,970		|
+| Mortgage Reason   | Location  | Number of Applicants | Annual Income | Number of Dependants	| Annual Bonus	| Monthly Debt	| Offer amount	|
+| First time buyers | Scotland  | 1                    | 30000         | 2						|		2000    | 500			|  86,020		|
+| First time buyers | Wales		| 1                    | 40000         | 3						|		0       | 200			|  179,600		|
 
 
 @mytag
@@ -25,8 +25,8 @@ Scenario Outline: Are there any mortgages for first time buyer with these figure
 	And I click on the calculate find a mortgage button
 	Then The number of products is greater than zero
 Examples: 
-| Mortgage Reason   | Customer Type    | Amount of Deposit	| Property Value | Repayment Term	|
-| First time buyers | first-time-buyer | 25000				| 100000         | 20				|
-| First time buyers | first-time-buyer | 50000				| 200000         | 15				|
+| Mortgage Reason   | Customer Type      | Amount of Deposit	| Property Value | Repayment Term	|
+| First time buyers | a-first-time-buyer | 25000				| 100000         | 20				|
+| First time buyers | a-first-time-buyer | 50000				| 200000         | 15				|
 
 

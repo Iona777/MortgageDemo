@@ -154,11 +154,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Number of Dependants", "2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Annual Bonus", "2000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Monthly Debt", "500")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "80,940")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "86,020")]
         public virtual void HowMuchCanFirstTimeBuyerBorrow_Variant0()
         {
 #line 7
-this.HowMuchCanFirstTimeBuyerBorrow("First time buyers", "Scotland", "1", "30000", "2", "2000", "500", "80,940", ((string[])(null)));
+this.HowMuchCanFirstTimeBuyerBorrow("First time buyers", "Scotland", "1", "30000", "2", "2000", "500", "86,020", ((string[])(null)));
 #line hidden
         }
         
@@ -174,11 +174,11 @@ this.HowMuchCanFirstTimeBuyerBorrow("First time buyers", "Scotland", "1", "30000
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Number of Dependants", "3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Annual Bonus", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Monthly Debt", "200")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "165,970")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Offer amount", "179,600")]
         public virtual void HowMuchCanFirstTimeBuyerBorrow_Variant1()
         {
 #line 7
-this.HowMuchCanFirstTimeBuyerBorrow("First time buyers", "Wales", "1", "40000", "3", "0", "200", "165,970", ((string[])(null)));
+this.HowMuchCanFirstTimeBuyerBorrow("First time buyers", "Wales", "1", "40000", "3", "0", "200", "179,600", ((string[])(null)));
 #line hidden
         }
         
@@ -240,14 +240,14 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mortgage Reason", "First time buyers")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Customer Type", "first-time-buyer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Customer Type", "a-first-time-buyer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount of Deposit", "25000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Property Value", "100000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Repayment Term", "20")]
         public virtual void AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures_Variant0()
         {
 #line 20
-this.AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures("First time buyers", "first-time-buyer", "25000", "100000", "20", ((string[])(null)));
+this.AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures("First time buyers", "a-first-time-buyer", "25000", "100000", "20", ((string[])(null)));
 #line hidden
         }
         
@@ -257,14 +257,14 @@ this.AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures("First time buyers", 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mortgage Reason", "First time buyers")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Customer Type", "first-time-buyer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Customer Type", "a-first-time-buyer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount of Deposit", "50000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Property Value", "200000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Repayment Term", "15")]
         public virtual void AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures_Variant1()
         {
 #line 20
-this.AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures("First time buyers", "first-time-buyer", "50000", "200000", "15", ((string[])(null)));
+this.AreThereAnyMortgagesForFirstTimeBuyerWithTheseFigures("First time buyers", "a-first-time-buyer", "50000", "200000", "15", ((string[])(null)));
 #line hidden
         }
     }

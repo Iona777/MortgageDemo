@@ -124,5 +124,26 @@ namespace SeleniumDomo_Mortgage.Pages
             SelectElement select = new SelectElement(dropDown);
             select.SelectByValue(value);
         }
+
+        /// <summary>
+        /// Checks if an element is visible on the page. Visibility means that the element
+        /// is not only displayed but also has a height and width that is greater than 0.
+        /// </summary>
+        /// <param name="by">Used to locate the element, e.g. By.Id("xyz")</param>
+        /// <param name="waitSeconds">Timeout in seconds</param>
+        /// <returns>Boolean</returns>
+        protected bool IsElementDisplayed(By by, int? waitSeconds = null)
+        {
+            int seconds = waitSeconds ?? BaseTimeout;
+
+            try
+            {
+                return GetVisibleElementByLocator(by, waitSeconds: seconds).Displayed;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

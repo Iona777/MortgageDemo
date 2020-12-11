@@ -28,12 +28,20 @@ namespace SeleniumDomo_Mortgage.Pages
         private readonly By repaymentTermDropdownLocator = By.Id("repayment_term");
         private readonly By calculateFindButtonLocator = By.Id("lnkButFind");
 
+        private readonly By privacyAcceptButtonLocator = By.Id("privacy-accept-button");
 
         //Methods
         public void GotToMortgagePage()
         {
             mortagePageURL = Driver.BaseUrl;
             Driver.NavigateTo(mortagePageURL);
+
+            //A modal has been added to accept privacy settings.
+            if (IsElementDisplayed(privacyAcceptButtonLocator, 2))
+            {
+                GetClickableElementByLocator(privacyAcceptButtonLocator).Click();
+            }
+
         }
 
         public void ClickOnMortgageReason(string reasonText)
