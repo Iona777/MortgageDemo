@@ -145,4 +145,3 @@ C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\obj\Debu
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\obj\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.dll
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\obj\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.pdb
 C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\obj\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.genruntimeconfig.cache
-C:\Users\gregm\source\repos\SeleniumDomo-Mortgage\SeleniumDomo-Mortgage\obj\Debug\netcoreapp3.1\SeleniumDomo-Mortgage.csprojAssemblyReference.cache

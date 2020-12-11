@@ -1157,7 +1157,7 @@
           "lib/netstandard2.0/WebDriver.dll": {}
         }
       },
-      "Selenium.WebDriver.ChromeDriver/81.0.4044.6900": {
+      "Selenium.WebDriver.ChromeDriver/87.0.4280.8800": {
         "type": "package",
         "build": {
           "build/Selenium.WebDriver.ChromeDriver.targets": {}
@@ -4232,18 +4232,20 @@
         "selenium.webdriver.nuspec"
       ]
     },
-    "Selenium.WebDriver.ChromeDriver/81.0.4044.6900": {
-      "sha512": "UQ1BIbA+XkjwsX9j8bDDtucNgMRdpnxuxjer37SuOpztjpgVA/5dOAPfGePjm36kT+NNb4mDsxqhKcKM6b14ow==",
+    "Selenium.WebDriver.ChromeDriver/87.0.4280.8800": {
+      "sha512": "7bgZ2QNhYFofxDdlGVfUVgNJ6B785u/UeoFjEzB7O2EiggPitosPqqB/TG0KpJwvqgQTs+nNJus3rn9yNMHa1A==",
       "type": "package",
-      "path": "selenium.webdriver.chromedriver/81.0.4044.6900",
+      "path": "selenium.webdriver.chromedriver/87.0.4280.8800",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "build/DefinePropertiesChromeDriver.targets",
         "build/Selenium.WebDriver.ChromeDriver.targets",
         "driver/linux64/chromedriver",
         "driver/mac64/chromedriver",
         "driver/win32/chromedriver.exe",
-        "selenium.webdriver.chromedriver.81.0.4044.6900.nupkg.sha512",
+        "nupkg-icon.png",
+        "selenium.webdriver.chromedriver.87.0.4280.8800.nupkg.sha512",
         "selenium.webdriver.chromedriver.nuspec"
       ]
     },
@@ -8810,7 +8812,7 @@
       "Microsoft.NET.Test.Sdk >= 15.9.0",
       "Selenium.Support >= 3.141.0",
       "Selenium.WebDriver >= 3.141.0",
-      "Selenium.WebDriver.ChromeDriver >= 81.0.4044.6900",
+      "Selenium.WebDriver.ChromeDriver >= 87.0.4280.8800",
       "SpecFlow >= 3.1.62",
       "SpecFlow.MsTest >= 3.1.62",
       "SpecFlow.Tools.MsBuild.Generation >= 3.1.62",
@@ -8896,7 +8898,7 @@
           },
           "Selenium.WebDriver.ChromeDriver": {
             "target": "Package",
-            "version": "[81.0.4044.6900, )"
+            "version": "[87.0.4280.8800, )"
           },
           "SpecFlow": {
             "target": "Package",
